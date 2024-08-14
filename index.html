@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINES BitsGap V3.0</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💵 KISNEL MINES 💵</h1>
+        <div class="grid-container">
+            <div class="black-square"></div>
+            <div class="grid">
+                <!-- Динамическое создание квадратов -->
+                <script>
+                    for (let i = 0; i < 25; i++) {
+                        document.write('<div class="square"></div>');
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p>КОЛ-ВО ЛОВУШЕК</p>
+            <div class="counter">
+                <button id="decrease">-</button>
+                <span id="trap-count">3</span>
+                <button id="increase">+</button>
+            </div>
+        </div>
+
+        <button id="get-signal">ПОЛУЧИТЬ СИГНАЛ</button>
+    </div>
+
+    <audio id="star-sound" src="sound/0813.mp3" preload="auto"></audio>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

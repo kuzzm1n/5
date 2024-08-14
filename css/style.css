@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/space2.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.black-square {
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    width: 284px;
+    height: 284px;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 0 20px 2px rgba(0, 255, 255, 0.2);
+    animation: neonGlow 10s infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.5);
+    }
+    25% {
+        box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px 5px rgba(255, 0, 255, 0.5);
+    }
+    75% {
+        box-shadow: 0 0 20px 5px rgba(255, 255, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.5);
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: -40px;
+    position: relative;
+    z-index: 2;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    background-color: #3c6e71;
+    border-radius: 10px;
+    border: none;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.star {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.square.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+.star.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.controls p {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.counter button {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    position: relative;
+}
+
+.counter button#decrease::before {
+    content: "-";
+    color: black;
+    font-size: 45px;
+    font-weight: 300;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.counter button#increase::before {
+    content: "+";
+    color: black;
+    font-size: 45px;
+    font-weight: 300;
+    position: absolute;
+    top: 52%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+}
+
+.counter span {
+    font-size: 36px;
+    margin: 0 20px;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+}
+
+button#decrease {
+    margin-right: 0;
+}
+
+button#increase {
+    margin-left: 0;
+}
+
+button#decrease:hover, button#increase:hover {
+    background-color: white;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+}
+
+button#go-back {
+    background-color: #8e44ad;
+}
+
+button:active {
+    background-color: #9b59b6;
+}
+
+button:hover {
+    background-color: #8e44ad;
+}
+
+#get-signal {
+    font-size: 20px;
+    padding: 15px 30px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+   50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
